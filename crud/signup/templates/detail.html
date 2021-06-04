@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{signup.name}}</h1>
+        작성자: {{signup.age}} <br>
+        날짜: {{signup.pub_date}}
+        {{signup.introduce}}
+        {{signup.email}}
+        <a href="{% url 'edit' signup.id %}">Edit</a>
+        <a href="{% url 'delete' signup.id %}">Delete</a>
+        <a href="{% url 'home' %}">main</a>
+    </div>
+</body>
+</html>

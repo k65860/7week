@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>signup.body Project</h1>
+    <div>
+        <a href="{% url 'new' %}">Write Your Information</a>
+    </div>
+
+    <div class="container">
+        {% for signup in signups %}
+        <div class="card">
+            <div class="card-body">
+            <h3>{{signup.name}}<h3>
+            {{signup.age}}<br>
+            {{signup.pub_date}}<br>
+            {{signup.email}}<br>
+            <a href="{% url 'detail' signup.id %}">...more</a>
+        </div>
+            {% endfor %}
+    </div>
+
+</div>  
+</body>
+</html>
