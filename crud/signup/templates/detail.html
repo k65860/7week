@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
     <title>Blog Detail</title>
 </head>
 <body>
+    {% block contents %}
     <div class="container">
         <h1>{{signup.name}}</h1>
         작성자: {{signup.age}} <br>
@@ -17,5 +19,6 @@
         <a href="{% url 'delete' signup.id %}">Delete</a>
         <a href="{% url 'home' %}">main</a>
     </div>
+    {% endblock %}
 </body>
 </html>

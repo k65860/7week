@@ -2,6 +2,7 @@
 # Create your views here.
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Signup
+from signup import views
 from django.utils import timezone
 
 # Create your views here.
@@ -23,6 +24,7 @@ def create(request):
     new_signup.pub_date = timezone.now()
     new_signup.email = request.POST['email']
     new_signup.introduce = request.POST['introduce']
+    new_signup.image = request.POST['image']
     new_signup.save()
     return redirect('detail', str(new_signup.id))
 
@@ -37,6 +39,7 @@ def update(request, id):
     update_Signup.email = request.POST['email']
     update_Signup.pub_date = timezone.now()
     update_Signup.introduce = request.POST['introduce']
+    update_Signup.image = request.POST['image']
     update_Signup.save()
     return redirect('detail', str(update_Signup.id))
 

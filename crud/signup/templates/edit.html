@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block contents %}
 <h1>Write signup</h1>
 
 <form action="{% url 'update' signup.id %}" method="POST">
@@ -5,6 +7,8 @@
     <p>이름: <input type="text" name="name" value="{{signup.name}}"></p>
     <p>나이: <input type="number" name="age" value="{{signup.age}}"></p>
     <p>이메일: <input type="email" name="email" value="{{signup.email}}"></p>
-    자기소개: <textarea name="introduce" cols="30" rows="10">{{signup.introduce}}</textarea>
-    <button type="submit">Submit</button>
+    자기소개: <input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
+    <button class="browse-btn">사진업로드</botton>
+    <button type="image">첨부파일</button>
 </form>
+{% endblock %}
